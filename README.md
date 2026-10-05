@@ -1,9 +1,9 @@
-# @saymaker/saymaker
+# saymaker
 
-Generate images and video on [SayMaker](https://saymaker.ai/?utm_source=jsr&utm_medium=package) from your own code: one API key runs Veo 3.1, Kling 3.0, Seedance 2.0, MiniMax H3, Nano Banana 2, GPT Image 2.5, Seedream 5.0 and the rest of the shelf on your own credits.
+Generate images and video on [SayMaker](https://saymaker.ai/?utm_source=npm&utm_medium=package) from your own code: one API key runs Veo 3.1, Kling 3.0, Seedance 2.0, MiniMax H3, Nano Banana 2, GPT Image 2.5, Seedream 5.0 and the rest of the shelf on your own credits.
 
 ```ts
-import { generate, generateVideo } from "@saymaker/saymaker";
+import { generate, generateVideo } from "saymaker";
 
 const url = await generate("a paper-cut layered mountain range at dusk");
 const clip = await generateVideo("a paper boat drifting down a rain gutter, low angle");
@@ -14,21 +14,20 @@ Each call waits for the run and returns the URL of the finished file. Runs on a 
 ## Install
 
 ```bash
-deno add jsr:@saymaker/saymaker    # Deno
-npx jsr add @saymaker/saymaker     # Node, Bun
+npm install saymaker
 ```
 
 One file, global `fetch`, no dependencies. Set `SAYMAKER_API_KEY` or pass `apiKey`.
 
 ## API key
 
-Sign up on [saymaker.ai](https://saymaker.ai/?utm_source=jsr&utm_medium=package) (new accounts get sign-up credits), create a key at [saymaker.ai/settings/apikeys](https://saymaker.ai/settings/apikeys?utm_source=jsr&utm_medium=package), then pass it or export it:
+Sign up on [saymaker.ai](https://saymaker.ai/?utm_source=npm&utm_medium=package) (new accounts get sign-up credits), create a key at [saymaker.ai/settings/apikeys](https://saymaker.ai/settings/apikeys?utm_source=npm&utm_medium=package), then pass it or export it:
 
 ```bash
 export SAYMAKER_API_KEY=sk-...
 ```
 
-A key runs on your account exactly like the site does: same models, same credit prices, same plan, and every run lands in your library at [saymaker.ai/history](https://saymaker.ai/history?utm_source=jsr&utm_medium=package).
+A key runs on your account exactly like the site does: same models, same credit prices, same plan, and every run lands in your library at [saymaker.ai/history](https://saymaker.ai/history?utm_source=npm&utm_medium=package).
 
 ## Images
 
@@ -37,7 +36,7 @@ await generate("isometric diorama of a ramen shop at night", { aspectRatio: "16:
 await generate("product shot of a glass perfume bottle on wet slate", { model: "gpt-image-2-5-flare" });
 ```
 
-The default model is `saymaker-image-v1`, the cheapest text-to-image run. Pass a model id for `nano-banana-2`, `gpt-image-2-5-flare`, `seedream-5-pro`, `qwen-image-3-pro` and the rest; see the [image models](https://saymaker.ai/image?utm_source=jsr&utm_medium=package).
+The default model is `saymaker-image-v1`, the cheapest text-to-image run. Pass a model id for `nano-banana-2`, `gpt-image-2-5-flare`, `seedream-5-pro`, `qwen-image-3-pro` and the rest; see the [image models](https://saymaker.ai/image?utm_source=npm&utm_medium=package).
 
 ### Editing a photo
 
@@ -60,7 +59,7 @@ await generateVideo("the camera slowly orbits the statue", { imageUrl: "https://
 await generateVideo("a street drummer in the rain", { model: "veo-3-1", resolution: "1080p" });
 ```
 
-The default model is `minimax-h3-fast`, the one a free account can run (480p or 768p, 4 to 15 seconds). Veo 3.1, Kling 3.0, Seedance 2.0 and the other video models need a plan or a credit pack; see [pricing](https://saymaker.ai/pricing?utm_source=jsr&utm_medium=package). Each model's options are on its page: [Veo 3.1](https://saymaker.ai/video/veo-3-1?utm_source=jsr&utm_medium=package), [Kling 3.0](https://saymaker.ai/video/kling-3-0?utm_source=jsr&utm_medium=package), [Seedance 2.0](https://saymaker.ai/video/seedance-2?utm_source=jsr&utm_medium=package).
+The default model is `minimax-h3-fast`, the one a free account can run (480p or 768p, 4 to 15 seconds). Veo 3.1, Kling 3.0, Seedance 2.0 and the other video models need a plan or a credit pack; see [pricing](https://saymaker.ai/pricing?utm_source=npm&utm_medium=package). Each model's options are on its page: [Veo 3.1](https://saymaker.ai/video/veo-3-1?utm_source=npm&utm_medium=package), [Kling 3.0](https://saymaker.ai/video/kling-3-0?utm_source=npm&utm_medium=package), [Seedance 2.0](https://saymaker.ai/video/seedance-2?utm_source=npm&utm_medium=package).
 
 ## Errors worth catching
 
@@ -76,4 +75,4 @@ The API answers refusals with HTTP 200 and an error code in the body, so a clien
 
 Free-account output carries a watermark; a paid plan returns the clean file.
 
-MIT licensed. Made by [SayMaker](https://saymaker.ai/?utm_source=jsr&utm_medium=package), the AI video generator agent.
+MIT licensed. Made by [SayMaker](https://saymaker.ai/?utm_source=npm&utm_medium=package), the AI video generator agent.

@@ -1,0 +1,18 @@
+{
+  "name": "saymaker",
+  "version": "0.1.0",
+  "description": "Generate images and video on SayMaker from JavaScript: Veo 3.1, Kling 3.0, Seedance 2.0, Nano Banana 2, GPT Image 2.5 with one API key",
+  "type": "module",
+  "main": "./dist/mod.js",
+  "types": "./dist/mod.d.ts",
+  "exports": { ".": { "types": "./dist/mod.d.ts", "default": "./dist/mod.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "keywords": ["ai", "video-generation", "image-generation", "text-to-video", "text-to-image", "veo", "kling", "seedance", "nano-banana", "saymaker"],
+  "homepage": "https://saymaker.ai/?utm_source=npm&utm_medium=package",
+  "repository": { "type": "git", "url": "git+https://github.com/hanshs474/saymaker-ts.git" },
+  "bugs": "https://github.com/hanshs474/saymaker-ts/issues",
+  "license": "MIT",
+  "author": "SayMaker",
+  "scripts": { "build": "tsc mod.ts --outDir dist --declaration --target es2022 --module es2022 --moduleResolution bundler --lib es2022,dom --skipLibCheck" }
+}
